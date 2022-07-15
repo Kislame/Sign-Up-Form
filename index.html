@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="grid">
+      <section class="grid__image">
+        <div class="logo-container">
+          <img src="./assets/starlight.svg" alt="logo" />
+        </div>
+      </section>
+      <section class="grid__content">
+        <p>
+          This is not real online service! Youn know you need something<br />
+          like this in your life to help you realize your deepest dreams.<br />
+          Sign Up now to get started.
+        </p>
+        <p>You <em>Know</em> you want to.</p>
+        <p class="text">Let's do this!</p>
+        <form action="" class="form" id="myform">
+          <fieldset>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                class="input"
+                required
+                placeholder=""
+              />
+              <label for="firstName" class="label"
+                ><span class="content-name">First Name</span></label
+              >
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                required
+                placeholder=""
+              />
+              <label for="email" class="label"
+                ><span class="content-name">Email</span></label
+              >
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                required
+                placeholder=""
+              />
+              <label for="password" class="label"
+                ><span class="content-name">Password</span></label
+              >
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="LastName"
+                name="LastName"
+                class="input"
+                required
+                placeholder=""
+              />
+              <label for="LastName" class="label"
+                ><span class="content-name">Last Name</span></label
+              >
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="tel"
+                id="PhoneNumber"
+                name="PhoneNumber"
+                class="input"
+                pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}"
+                required
+                placeholder=""
+              />
+              <label for="PhoneNumber" class="label"
+                ><span class="content-name">Phone Number</span></label
+              >
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                title="please enter a valid password, example : Jhon25"
+                required
+                placeholder=""
+              />
+              <label for="password" class="label"
+                ><span class="content-name">Confirm Password</span></label
+              >
+            </div>
+          </fieldset>
+        </form>
+        <div class="btn-container">
+          <button class="btn" form="myform" type="submit">
+            Create Account
+          </button>
+          <p>Already have an account? <a href="#" class="login">Log in</a></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

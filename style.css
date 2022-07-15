@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --dark-gray: rgb(15, 17, 18);
+  --lightgrayish-blue: rgb(174, 189, 192);
+}
+
+html {
+  height: 100%; /* fallback for IE and older browsers */
+  height: 100vh;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+}
+.form {
+  margin-top: 1em;
+  display: flex;
+  gap: 1.5em;
+  padding-left: 2em;
+}
+
+.input-wrapper {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  margin: 1em 0;
+}
+.input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: white;
+
+  font-size: 18px;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+}
+.label {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid var(--lightgrayish-blue);
+}
+.label::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid springgreen;
+  /* border-image: linear-gradient(
+      90deg,
+      rgba(37, 204, 213, 1) 50%,
+      rgba(48, 232, 149, 1) 50%
+    )
+    1; */
+  left: 0;
+  bottom: -1px;
+  transform: translateX(-100%);
+  transition: all 0.2s ease;
+}
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+  color: var(--lightgrayish-blue);
+}
+.input:focus + .label .content-name,
+.input:not(:placeholder-shown) + .label .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: rgb(0, 136, 255);
+}
+
+.input:focus + .label::after,
+.input:valid + .label::after {
+  transform: translateX(0%);
+}
+
+/*If the input is not required, we can use the ":not(:placeholder-shown)" instead of ":valid". And in the html code for the input field add a placeholder with the value " "(space).*/
+.grid {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 100vh;
+}
+
+.grid__image {
+  background: url("./assets/whereslugo-5ZjeqJ8iHZk-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.logo-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 5em;
+  padding: 0.5em;
+}
+
+.logo-container > img {
+  width: 40%;
+}
+
+.grid__content {
+  background-color: var(--dark-gray);
+
+  padding-top: 3em;
+}
+
+.grid__content p {
+  font-weight: 600;
+  color: var(--lightgrayish-blue);
+  font-size: 20px;
+  padding-left: 2em;
+}
+.grid__content > .text {
+  margin-top: 1.5em;
+  font-size: 22px;
+}
+
+fieldset {
+  border: none;
+  width: 45%;
+}
+
+.btn-container {
+  margin: 2em 0;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  background-color: transparent;
+  border: 2px solid springgreen;
+  color: springgreen;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+.login {
+  color: springgreen;
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 70%;
+  }
+  .grid__image {
+    justify-content: center;
+  }
+  .grid__content {
+    text-align: center;
+    padding-top: 1em;
+  }
+  .grid__content > p {
+    padding: 0;
+  }
+  .form {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-inline: 2em;
+  }
+  fieldset {
+    width: 100%;
+  }
+}
