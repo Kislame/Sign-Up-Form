@@ -84,7 +84,24 @@ a {
   color: var(--lightgrayish-blue);
 }
 .input:focus + .label .content-name,
-.input:not(:placeholder-shown) + .label .content-name {
+.input[type="text"]:valid + .label .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: rgb(0, 136, 255);
+}
+
+.input:focus + .label .content-name,
+.input[type="email"]:not(:placeholder-shown) + .label .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: rgb(0, 136, 255);
+}
+.input[type="password"]:not(:placeholder-shown) + .label .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: rgb(0, 136, 255);
+}
+.input[type="tel"]:not(:placeholder-shown) + .label .content-name {
   transform: translateY(-150%);
   font-size: 14px;
   color: rgb(0, 136, 255);
